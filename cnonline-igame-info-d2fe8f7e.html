@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再访 · 爱游戏 | 持续关注与收藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f4f1ea;
+            color: #1f2a3a;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b141f 0%, #1a2938 100%);
+            color: #e9eef2;
+            padding: 6.5rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #2b3b4d;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            font-weight: 350;
+            color: #b7c8da;
+            max-width: 36rem;
+            margin: 0 auto 1.6rem;
+            line-height: 1.5;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            background: #2c4056;
+            color: #cbdbe9;
+            font-size: 0.8rem;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            border: 1px solid #405a74;
+        }
+
+        /* 正文浅色区 */
+        .content {
+            max-width: 760px;
+            margin: 2.8rem auto 3.5rem;
+            padding: 0 2rem;
+        }
+
+        .content section {
+            margin-bottom: 3rem;
+        }
+
+        .content h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #0f1c2a;
+            border-left: 4px solid #c75b2e;
+            padding-left: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            color: #1f2a3a;
+        }
+
+        .content .inset-quote {
+            background: #e6e2d7;
+            border-left: 5px solid #c75b2e;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 8px 8px 0;
+            color: #1f2b39;
+            font-style: normal;
+            font-size: 1rem;
+        }
+
+        .content .inset-quote strong {
+            color: #b44d24;
+        }
+
+        .content .inset-quote a {
+            color: #b44d24;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b44d24;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: #803616;
+            text-decoration: underline;
+        }
+
+        /* 重访记忆卡片 */
+        .memory-card {
+            background: #ffffff;
+            border: 1px solid #d8d2c4;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+        }
+
+        .memory-card .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #7c6e5c;
+            margin-bottom: 0.3rem;
+        }
+
+        .memory-card p {
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        .memory-card .highlight {
+            background: #f1ede4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #1f2a3a;
+        }
+
+        .faq-mini {
+            background: #ffffffef;
+            border: 1px solid #e3dbce;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin: 2.2rem 0;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #152433;
+        }
+
+        .faq-mini .q-item {
+            margin-top: 1.2rem;
+            border-bottom: 1px dashed #cfc7b8;
+            padding-bottom: 1rem;
+        }
+
+        .faq-mini .q-item:last-child {
+            border-bottom: 0;
+        }
+
+        .faq-mini .question {
+            font-weight: 550;
+            color: #213349;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-mini .answer {
+            color: #3a4b5e;
+            font-size: 0.98rem;
+        }
+
+        /* 访问句 · 收藏提示 */
+        .visit-note {
+            background: #1f2c3d;
+            color: #dbe2ec;
+            padding: 2.2rem 2.5rem;
+            border-radius: 24px;
+            margin: 2.8rem 0 1.8rem;
+            text-align: center;
+        }
+
+        .visit-note p {
+            color: #c7d6e9;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .visit-note .label-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 1.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .visit-note .label-line span {
+            background: #344b61;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #e2ebf5;
+        }
+
+        footer {
+            max-width: 760px;
+            margin: 1rem auto 3rem;
+            padding: 0 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7b6f5d;
+            border-top: 1px solid #dad3c6;
+            padding-top: 2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            .content h2 {
+                font-size: 1.4rem;
+            }
+            .memory-card {
+                padding: 1.2rem;
+            }
+            .faq-mini {
+                padding: 1.2rem;
+            }
+            .visit-note {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem 3rem;
+            }
+            .content p {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>再访 · 爱游戏</h1>
+    <p class="tagline">持续关注，收藏一个认真对待游戏的角落</p>
+    <div class="meta-badge">归档 · 重读 · 常回来看看</div>
+</header>
+
+<main class="content">
+
+    <!-- 导语 / 从再次访问切入 -->
+    <section>
+        <h2>回到一个值得收藏的地方</h2>
+        <p>游戏站点很多，但愿意反复打开、放入书签栏的并不多。<strong>爱游戏</strong> 不属于短暂刷新的信息流，它更像一座安静的侧厅：没有弹窗干扰，没有夸张横幅，只有扎实的推荐、稍带克制的评测，以及一种「为游戏本身停留」的态度。如果你上一次访问已是几周甚至几个月前，现在也许是重新熟悉它的好时机。</p>
+        <p>标记一个 URL 很容易，但真正愿意持续关注的，往往是因为内容里有一种稳定的质感。无论是寻找下一部值得投入时间的作品，还是单纯想读一段有观点的游戏随笔——<a href="https://cnonline-igame.com">爱游戏</a> 始终是那个不靠噱头吸引注意力的坐标。</p>
+    </section>
+
+    <!-- 多段正文 + 引用提示 -->
+    <section>
+        <h2>为什么持续关注？</h2>
+        <p>信息过载的时代里，主动收藏是一种过滤。从游戏类型、叙事设计到手感细节，爱游戏通常不会用「必玩」「神作」这类虚词包裹内容，而是直接陈述玩到第几章、哪些地方让人放下手柄思考、哪些设计值得反复拆解。这种专业上的克制，恰恰是长期关注的信任基础。</p>
+
+        <div class="inset-quote">
+            <strong>读者提示：</strong> 如果你上次读到一半的文章还留在浏览器标签页里，或许可以趁这次访问重新打开。爱游戏的文章结构偏向于「先给结论，再展开论证」，适合断续阅读。<br>
+            <span style="display:inline-block; margin-top: 0.3rem;">→ 直接从书签或历史记录回到 <a href="https://cnonline-igame.com">爱游戏</a></span>
+        </div>
+
+        <p>另一个微妙的原因是：好的游戏媒体往往有自己的时间线。爱游戏不会每天更新轰炸，而是有节奏地输出。这种节奏让你不必时刻盯着，但每次回访都能发现一篇值得细读的内容。收藏的本质，就是主动保留这种「可以随时回来」的松弛感。</p>
+    </section>
+
+    <!-- 记忆卡片 + 场景 -->
+    <div class="memory-card">
+        <div class="card-label">📌 重访场景</div>
+        <p><span class="highlight">深夜挑游戏</span> —— 打开爱游戏，扫一眼近期的推荐列表，不用纠结评分，直接看开头两段就能判断对不对味。</p>
+        <p><span class="highlight">通勤阅读</span> —— 那些 2000 字左右的评测恰好适合碎片时间，没有多余段落，信息密度刚好。</p>
+        <p><span class="highlight">寻找同类</span> —— 如果你喜欢关注玩法机制而非单纯剧情，这里的切入角度经常出乎意料。</p>
+    </div>
+
+    <!-- FAQ 摘要（真实、克制） -->
+    <div class="faq-mini">
+        <h3>常见问题 · 简答</h3>
+        <div class="q-item">
+            <p class="question">需要注册或登录才能阅读全部内容吗？</p>
+            <p class="answer">不需要。目前所有文章和推荐在 <a href="https://cnonline-igame.com">爱游戏</a> 上都可以直接阅读，无需创建账号。部分互动功能或评论可能后续开放，但阅读本身没有门槛。</p>
+        </div>
+        <div class="q-item">
+            <p class="question">内容更新频率大概多久？</p>
+            <p class="answer">平均每周 2–3 篇，偶尔有长篇专题。没有固定排期，但每次更新都经过编辑筛选，不会出现灌水条目。适合订阅或每周回访一次。</p>
+        </div>
+        <div class="q-item">
+            <p class="question">之前收藏的文章找不到了怎么办？</p>
+            <p class="answer">目前没有公开的归档索引页，但站内搜索功能可以回溯大部分文章。你也可以通过浏览器的历史记录定位。如果确实找不到，不妨把它当作重新发现的乐趣。</p>
+        </div>
+    </div>
+
+    <!-- 访问句 + 收藏暗示 -->
+    <div class="visit-note">
+        <p>把链接放在书签栏，或者记在备忘录里。</p>
+        <p>下次再想起游戏的时候，这里会是一个安静的起点。</p>
+        <div class="label-line">
+            <span>✦ 持续关注</span>
+            <span>✦ 不加 tag 轰炸</span>
+            <span>✦ 值得回访</span>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.95rem;">→ <a href="https://cnonline-igame.com" style="color: #eecfc0; text-decoration: underline;">爱游戏</a> · 收藏即认可</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>— 再访即是阅读 · 爱游戏 —</p>
+</footer>
+
+</body>
+</html>
